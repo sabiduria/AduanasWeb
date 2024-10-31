@@ -73,7 +73,7 @@
                             <th><?= __('Transaction') ?></th>
                             <th><?= __('Seal') ?></th>
                             <th><?= __('Created') ?></th>
-                            <th><?= __('Created by') ?></th>
+                            <th><?= __('Createdby') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($transaction->movements as $movement) : ?>

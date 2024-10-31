@@ -52,7 +52,7 @@ class TransactionsTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->belongsTo('Agencies', [
-            'foreignKey' => 'sender_id',
+            'foreignKey' => 'agency_id',
             'joinType' => 'INNER',
         ]);
         $this->belongsTo('Statuses', [
@@ -81,8 +81,8 @@ class TransactionsTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->integer('sender_id')
-            ->notEmptyString('sender_id');
+            ->integer('agency_id')
+            ->notEmptyString('agency_id');
 
         $validator
             ->integer('receiver_id')
@@ -125,7 +125,7 @@ class TransactionsTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn(['sender_id'], 'Agencies'), ['errorField' => 'sender_id']);
+        $rules->add($rules->existsIn(['agency_id'], 'Agencies'), ['errorField' => 'agency_id']);
         $rules->add($rules->existsIn(['status_id'], 'Statuses'), ['errorField' => 'status_id']);
         $rules->add($rules->existsIn(['user_id'], 'Users'), ['errorField' => 'user_id']);
         $rules->add($rules->existsIn(['transactiontype_id'], 'Transactiontypes'), ['errorField' => 'transactiontype_id']);

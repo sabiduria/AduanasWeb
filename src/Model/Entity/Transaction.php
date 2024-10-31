@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * Transaction Entity
  *
  * @property int $id
- * @property int $sender_id
+ * @property int $agency_id
  * @property int|null $receiver_id
  * @property int $status_id
  * @property int $user_id
@@ -38,7 +38,7 @@ class Transaction extends Entity
      * @var array<string, bool>
      */
     protected array $_accessible = [
-        'sender_id' => true,
+        'agency_id' => true,
         'receiver_id' => true,
         'status_id' => true,
         'user_id' => true,

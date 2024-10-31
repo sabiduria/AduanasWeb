@@ -12,13 +12,13 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('sender') ?></th>
+                    <th><?= $this->Paginator->sort('agency') ?></th>
                     <th><?= $this->Paginator->sort('receiver') ?></th>
                     <th><?= $this->Paginator->sort('status') ?></th>
                     <th><?= $this->Paginator->sort('user') ?></th>
                     <th><?= $this->Paginator->sort('transaction type') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('created by') ?></th>
+                    <th><?= $this->Paginator->sort('createdby') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
