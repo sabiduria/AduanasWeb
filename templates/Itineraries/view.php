@@ -58,21 +58,18 @@
                     <table>
                         <tr>
                             <th><?= __('Id') ?></th>
-                            <th><?= __('Itinerary Id') ?></th>
-                            <th><?= __('Agency Id') ?></th>
-                            <th><?= __('Seal Id') ?></th>
-                            <th><?= __('Vehicleplate') ?></th>
-                            <th><?= __('Vehicletype') ?></th>
+                            <th><?= __('Itinerary') ?></th>
+                            <th><?= __('Agency') ?></th>
+                            <th><?= __('Seal') ?></th>
+                            <th><?= __('Vehicle plate') ?></th>
+                            <th><?= __('Vehicle type') ?></th>
                             <th><?= __('Driver') ?></th>
                             <th><?= __('Phone') ?></th>
-                            <th><?= __('Exitdate') ?></th>
-                            <th><?= __('Goodnature') ?></th>
-                            <th><?= __('Currentlocation') ?></th>
+                            <th><?= __('Exit date') ?></th>
+                            <th><?= __('Good nature') ?></th>
+                            <th><?= __('Current location') ?></th>
                             <th><?= __('Created') ?></th>
-                            <th><?= __('Modified') ?></th>
-                            <th><?= __('Createdby') ?></th>
-                            <th><?= __('Modifiedby') ?></th>
-                            <th><?= __('Deleted') ?></th>
+                            <th><?= __('Created by') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($itinerary->assignments as $assignment) : ?>
@@ -89,10 +86,7 @@
                             <td><?= h($assignment->goodnature) ?></td>
                             <td><?= h($assignment->currentlocation) ?></td>
                             <td><?= h($assignment->created) ?></td>
-                            <td><?= h($assignment->modified) ?></td>
                             <td><?= h($assignment->createdby) ?></td>
-                            <td><?= h($assignment->modifiedby) ?></td>
-                            <td><?= h($assignment->deleted) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Assignments', 'action' => 'view', $assignment->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Assignments', 'action' => 'edit', $assignment->id]) ?>

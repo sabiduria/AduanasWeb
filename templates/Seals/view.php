@@ -73,10 +73,7 @@
                             <th><?= __('Goodnature') ?></th>
                             <th><?= __('Currentlocation') ?></th>
                             <th><?= __('Created') ?></th>
-                            <th><?= __('Modified') ?></th>
                             <th><?= __('Createdby') ?></th>
-                            <th><?= __('Modifiedby') ?></th>
-                            <th><?= __('Deleted') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($seal->assignments as $assignment) : ?>
@@ -93,10 +90,7 @@
                             <td><?= h($assignment->goodnature) ?></td>
                             <td><?= h($assignment->currentlocation) ?></td>
                             <td><?= h($assignment->created) ?></td>
-                            <td><?= h($assignment->modified) ?></td>
                             <td><?= h($assignment->createdby) ?></td>
-                            <td><?= h($assignment->modifiedby) ?></td>
-                            <td><?= h($assignment->deleted) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Assignments', 'action' => 'view', $assignment->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Assignments', 'action' => 'edit', $assignment->id]) ?>
@@ -115,13 +109,10 @@
                     <table>
                         <tr>
                             <th><?= __('Id') ?></th>
-                            <th><?= __('Transaction Id') ?></th>
-                            <th><?= __('Seal Id') ?></th>
+                            <th><?= __('Transaction') ?></th>
+                            <th><?= __('Seal') ?></th>
                             <th><?= __('Created') ?></th>
-                            <th><?= __('Modified') ?></th>
-                            <th><?= __('Createdby') ?></th>
-                            <th><?= __('Modifiedby') ?></th>
-                            <th><?= __('Deleted') ?></th>
+                            <th><?= __('Created by') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($seal->movements as $movement) : ?>
@@ -130,10 +121,7 @@
                             <td><?= h($movement->transaction_id) ?></td>
                             <td><?= h($movement->seal_id) ?></td>
                             <td><?= h($movement->created) ?></td>
-                            <td><?= h($movement->modified) ?></td>
                             <td><?= h($movement->createdby) ?></td>
-                            <td><?= h($movement->modifiedby) ?></td>
-                            <td><?= h($movement->deleted) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Movements', 'action' => 'view', $movement->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Movements', 'action' => 'edit', $movement->id]) ?>

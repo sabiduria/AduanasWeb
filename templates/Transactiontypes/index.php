@@ -6,7 +6,7 @@
 ?>
 <div class="transactiontypes index content">
     <?= $this->Html->link(__('New Transactiontype'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Transactiontypes') ?></h3>
+    <h3><?= __('Transaction Types') ?></h3>
     <div class="table-responsive">
         <table>
             <thead>
@@ -14,10 +14,7 @@
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('name') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th><?= $this->Paginator->sort('createdby') ?></th>
-                    <th><?= $this->Paginator->sort('modifiedby') ?></th>
-                    <th><?= $this->Paginator->sort('deleted') ?></th>
+                    <th><?= $this->Paginator->sort('created by') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -27,10 +24,7 @@
                     <td><?= $this->Number->format($transactiontype->id) ?></td>
                     <td><?= h($transactiontype->name) ?></td>
                     <td><?= h($transactiontype->created) ?></td>
-                    <td><?= h($transactiontype->modified) ?></td>
                     <td><?= h($transactiontype->createdby) ?></td>
-                    <td><?= h($transactiontype->modifiedby) ?></td>
-                    <td><?= $transactiontype->deleted === null ? '' : $this->Number->format($transactiontype->deleted) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $transactiontype->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $transactiontype->id]) ?>

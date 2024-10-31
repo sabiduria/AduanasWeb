@@ -12,13 +12,10 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('transaction_id') ?></th>
-                    <th><?= $this->Paginator->sort('seal_id') ?></th>
+                    <th><?= $this->Paginator->sort('transaction') ?></th>
+                    <th><?= $this->Paginator->sort('seal') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th><?= $this->Paginator->sort('createdby') ?></th>
-                    <th><?= $this->Paginator->sort('modifiedby') ?></th>
-                    <th><?= $this->Paginator->sort('deleted') ?></th>
+                    <th><?= $this->Paginator->sort('created by') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -29,10 +26,7 @@
                     <td><?= $movement->hasValue('transaction') ? $this->Html->link($movement->transaction->id, ['controller' => 'Transactions', 'action' => 'view', $movement->transaction->id]) : '' ?></td>
                     <td><?= $movement->hasValue('seal') ? $this->Html->link($movement->seal->id, ['controller' => 'Seals', 'action' => 'view', $movement->seal->id]) : '' ?></td>
                     <td><?= h($movement->created) ?></td>
-                    <td><?= h($movement->modified) ?></td>
                     <td><?= h($movement->createdby) ?></td>
-                    <td><?= h($movement->modifiedby) ?></td>
-                    <td><?= $movement->deleted === null ? '' : $this->Number->format($movement->deleted) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $movement->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $movement->id]) ?>

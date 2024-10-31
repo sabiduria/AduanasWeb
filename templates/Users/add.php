@@ -23,9 +23,6 @@
                     echo $this->Form->control('email');
                     echo $this->Form->control('username');
                     echo $this->Form->control('password');
-                    echo $this->Form->control('createdby');
-                    echo $this->Form->control('modifiedby');
-                    echo $this->Form->control('deleted');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

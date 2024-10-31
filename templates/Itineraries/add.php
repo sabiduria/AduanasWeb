@@ -18,10 +18,7 @@
                 <legend><?= __('Add Itinerary') ?></legend>
                 <?php
                     echo $this->Form->control('name');
-                    echo $this->Form->control('gpscoordinates');
-                    echo $this->Form->control('createdby');
-                    echo $this->Form->control('modifiedby');
-                    echo $this->Form->control('deleted');
+                    echo $this->Form->control('gpscoordinates', ['label'=>'GPS Coordinates']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -54,16 +54,13 @@
                     <table>
                         <tr>
                             <th><?= __('Id') ?></th>
-                            <th><?= __('Sender Id') ?></th>
-                            <th><?= __('Receiver Id') ?></th>
-                            <th><?= __('Status Id') ?></th>
-                            <th><?= __('User Id') ?></th>
-                            <th><?= __('Transactiontype Id') ?></th>
+                            <th><?= __('Sender') ?></th>
+                            <th><?= __('Receiver') ?></th>
+                            <th><?= __('Status') ?></th>
+                            <th><?= __('User') ?></th>
+                            <th><?= __('Transaction type') ?></th>
                             <th><?= __('Created') ?></th>
-                            <th><?= __('Modified') ?></th>
-                            <th><?= __('Createdby') ?></th>
-                            <th><?= __('Modifiedby') ?></th>
-                            <th><?= __('Deleted') ?></th>
+                            <th><?= __('Created by') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($transactiontype->transactions as $transaction) : ?>
@@ -75,10 +72,7 @@
                             <td><?= h($transaction->user_id) ?></td>
                             <td><?= h($transaction->transactiontype_id) ?></td>
                             <td><?= h($transaction->created) ?></td>
-                            <td><?= h($transaction->modified) ?></td>
                             <td><?= h($transaction->createdby) ?></td>
-                            <td><?= h($transaction->modifiedby) ?></td>
-                            <td><?= h($transaction->deleted) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Transactions', 'action' => 'view', $transaction->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Transactions', 'action' => 'edit', $transaction->id]) ?>

@@ -18,10 +18,7 @@
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('username') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th><?= $this->Paginator->sort('createdby') ?></th>
-                    <th><?= $this->Paginator->sort('modifiedby') ?></th>
-                    <th><?= $this->Paginator->sort('deleted') ?></th>
+                    <th><?= $this->Paginator->sort('created by') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -35,10 +32,7 @@
                     <td><?= h($user->email) ?></td>
                     <td><?= h($user->username) ?></td>
                     <td><?= h($user->created) ?></td>
-                    <td><?= h($user->modified) ?></td>
                     <td><?= h($user->createdby) ?></td>
-                    <td><?= h($user->modifiedby) ?></td>
-                    <td><?= $user->deleted === null ? '' : $this->Number->format($user->deleted) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>

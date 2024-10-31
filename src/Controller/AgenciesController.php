@@ -32,7 +32,7 @@ class AgenciesController extends AppController
      */
     public function view($id = null)
     {
-        $agency = $this->Agencies->get($id, contain: ['Assignments']);
+        $agency = $this->Agencies->get($id, contain: ['Assignments', 'Transactions']);
         $this->set(compact('agency'));
     }
 
@@ -46,6 +46,11 @@ class AgenciesController extends AppController
         $agency = $this->Agencies->newEmptyEntity();
         if ($this->request->is('post')) {
             $agency = $this->Agencies->patchEntity($agency, $this->request->getData());
+
+            $agency->createdby = "System";
+            $agency->modifiedby = "System";
+            $agency->deleted = 0;
+
             if ($this->Agencies->save($agency)) {
                 $this->Flash->success(__('The agency has been saved.'));
 
@@ -68,6 +73,9 @@ class AgenciesController extends AppController
         $agency = $this->Agencies->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $agency = $this->Agencies->patchEntity($agency, $this->request->getData());
+
+            $agency->modifiedby = "System";
+
             if ($this->Agencies->save($agency)) {
                 $this->Flash->success(__('The agency has been saved.'));
 

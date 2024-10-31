@@ -70,13 +70,10 @@
                     <table>
                         <tr>
                             <th><?= __('Id') ?></th>
-                            <th><?= __('Transaction Id') ?></th>
-                            <th><?= __('Seal Id') ?></th>
+                            <th><?= __('Transaction') ?></th>
+                            <th><?= __('Seal') ?></th>
                             <th><?= __('Created') ?></th>
-                            <th><?= __('Modified') ?></th>
-                            <th><?= __('Createdby') ?></th>
-                            <th><?= __('Modifiedby') ?></th>
-                            <th><?= __('Deleted') ?></th>
+                            <th><?= __('Created by') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                         <?php foreach ($transaction->movements as $movement) : ?>
@@ -85,10 +82,7 @@
                             <td><?= h($movement->transaction_id) ?></td>
                             <td><?= h($movement->seal_id) ?></td>
                             <td><?= h($movement->created) ?></td>
-                            <td><?= h($movement->modified) ?></td>
                             <td><?= h($movement->createdby) ?></td>
-                            <td><?= h($movement->modifiedby) ?></td>
-                            <td><?= h($movement->deleted) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Movements', 'action' => 'view', $movement->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Movements', 'action' => 'edit', $movement->id]) ?>

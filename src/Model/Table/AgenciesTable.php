@@ -50,6 +50,9 @@ class AgenciesTable extends Table
         $this->hasMany('Assignments', [
             'foreignKey' => 'agency_id',
         ]);
+        $this->hasMany('Transactions', [
+            'foreignKey' => 'agency_id',
+        ]);
     }
 
     /**

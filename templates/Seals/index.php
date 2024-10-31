@@ -14,12 +14,9 @@
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('reference') ?></th>
                     <th><?= $this->Paginator->sort('barcode') ?></th>
-                    <th><?= $this->Paginator->sort('sealstatus') ?></th>
+                    <th><?= $this->Paginator->sort('seal status') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th><?= $this->Paginator->sort('createdby') ?></th>
-                    <th><?= $this->Paginator->sort('modifiedby') ?></th>
-                    <th><?= $this->Paginator->sort('deleted') ?></th>
+                    <th><?= $this->Paginator->sort('created by') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -31,10 +28,7 @@
                     <td><?= h($seal->barcode) ?></td>
                     <td><?= h($seal->sealstatus) ?></td>
                     <td><?= h($seal->created) ?></td>
-                    <td><?= h($seal->modified) ?></td>
                     <td><?= h($seal->createdby) ?></td>
-                    <td><?= h($seal->modifiedby) ?></td>
-                    <td><?= $seal->deleted === null ? '' : $this->Number->format($seal->deleted) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $seal->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $seal->id]) ?>

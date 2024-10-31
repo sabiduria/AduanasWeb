@@ -20,19 +20,16 @@
             <fieldset>
                 <legend><?= __('Add Assignment') ?></legend>
                 <?php
-                    echo $this->Form->control('itinerary_id', ['options' => $itineraries]);
-                    echo $this->Form->control('agency_id', ['options' => $agencies]);
-                    echo $this->Form->control('seal_id', ['options' => $seals]);
-                    echo $this->Form->control('vehicleplate');
-                    echo $this->Form->control('vehicletype');
+                    echo $this->Form->control('itinerary_id', ['options' => $itineraries, 'label'=>'Itinerary']);
+                    echo $this->Form->control('agency_id', ['options' => $agencies, 'label'=>'Agency Sender']);
+                    echo $this->Form->control('seal_id', ['options' => $seals, 'label'=>'Seal']);
+                    echo $this->Form->control('vehicleplate', ['label'=>'Vehicle Plate']);
+                    echo $this->Form->control('vehicletype', ['label'=>'Vehicle Type']);
                     echo $this->Form->control('driver');
                     echo $this->Form->control('phone');
-                    echo $this->Form->control('exitdate', ['empty' => true]);
-                    echo $this->Form->control('goodnature');
-                    echo $this->Form->control('currentlocation');
-                    echo $this->Form->control('createdby');
-                    echo $this->Form->control('modifiedby');
-                    echo $this->Form->control('deleted');
+                    echo $this->Form->control('exitdate', ['empty' => true, 'label'=>'Exit Date']);
+                    echo $this->Form->control('goodnature', ['label'=>'Good Nature']);
+                    echo $this->Form->control('currentlocation', ['label'=>'Current Location']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -23,9 +23,6 @@
                 <legend><?= __('Edit Status') ?></legend>
                 <?php
                     echo $this->Form->control('name');
-                    echo $this->Form->control('createdby');
-                    echo $this->Form->control('modifiedby');
-                    echo $this->Form->control('deleted');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

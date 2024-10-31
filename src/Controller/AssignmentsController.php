@@ -47,6 +47,11 @@ class AssignmentsController extends AppController
         $assignment = $this->Assignments->newEmptyEntity();
         if ($this->request->is('post')) {
             $assignment = $this->Assignments->patchEntity($assignment, $this->request->getData());
+
+            $assignment->createdby = "System";
+            $assignment->modifiedby = "System";
+            $assignment->deleted = 0;
+
             if ($this->Assignments->save($assignment)) {
                 $this->Flash->success(__('The assignment has been saved.'));
 
@@ -72,6 +77,9 @@ class AssignmentsController extends AppController
         $assignment = $this->Assignments->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $assignment = $this->Assignments->patchEntity($assignment, $this->request->getData());
+
+            $assignment->modifiedby = "System";
+
             if ($this->Assignments->save($assignment)) {
                 $this->Flash->success(__('The assignment has been saved.'));
 

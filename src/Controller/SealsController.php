@@ -46,6 +46,11 @@ class SealsController extends AppController
         $seal = $this->Seals->newEmptyEntity();
         if ($this->request->is('post')) {
             $seal = $this->Seals->patchEntity($seal, $this->request->getData());
+
+            $seal->createdby = "System";
+            $seal->modifiedby = "System";
+            $seal->deleted = 0;
+
             if ($this->Seals->save($seal)) {
                 $this->Flash->success(__('The seal has been saved.'));
 
@@ -68,6 +73,9 @@ class SealsController extends AppController
         $seal = $this->Seals->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $seal = $this->Seals->patchEntity($seal, $this->request->getData());
+
+            $seal->modifiedby = "System";
+
             if ($this->Seals->save($seal)) {
                 $this->Flash->success(__('The seal has been saved.'));
 

@@ -26,14 +26,11 @@
             <fieldset>
                 <legend><?= __('Edit Transaction') ?></legend>
                 <?php
-                    echo $this->Form->control('sender_id', ['options' => $agencies]);
-                    echo $this->Form->control('receiver_id');
-                    echo $this->Form->control('status_id', ['options' => $statuses]);
-                    echo $this->Form->control('user_id', ['options' => $users]);
-                    echo $this->Form->control('transactiontype_id', ['options' => $transactiontypes]);
-                    echo $this->Form->control('createdby');
-                    echo $this->Form->control('modifiedby');
-                    echo $this->Form->control('deleted');
+                echo $this->Form->control('sender_id', ['options' => $agencies, 'label'=>'Agency Sender']);
+                echo $this->Form->control('receiver_id', ['options' => $agencies, 'label'=>'Agency Receiver']);
+                echo $this->Form->control('status_id', ['options' => $statuses, 'label'=>'Status']);
+                echo $this->Form->control('user_id', ['options' => $users, 'label'=>'User']);
+                echo $this->Form->control('transactiontype_id', ['options' => $transactiontypes, 'label'=>'Transaction Type']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -13,12 +13,9 @@
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('name') ?></th>
-                    <th><?= $this->Paginator->sort('gpscoordinates') ?></th>
+                    <th><?= $this->Paginator->sort('gps coordinates') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th><?= $this->Paginator->sort('createdby') ?></th>
-                    <th><?= $this->Paginator->sort('modifiedby') ?></th>
-                    <th><?= $this->Paginator->sort('deleted') ?></th>
+                    <th><?= $this->Paginator->sort('created by') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -29,10 +26,7 @@
                     <td><?= h($itinerary->name) ?></td>
                     <td><?= h($itinerary->gpscoordinates) ?></td>
                     <td><?= h($itinerary->created) ?></td>
-                    <td><?= h($itinerary->modified) ?></td>
                     <td><?= h($itinerary->createdby) ?></td>
-                    <td><?= h($itinerary->modifiedby) ?></td>
-                    <td><?= $itinerary->deleted === null ? '' : $this->Number->format($itinerary->deleted) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $itinerary->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $itinerary->id]) ?>

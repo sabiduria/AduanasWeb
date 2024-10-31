@@ -36,7 +36,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Aduans</span>WEB</a>
+            <a href="<?= $this->Url->build('/') ?>"><span>Aduanas</span> WEB</a>
         </div>
     </nav>
     <main class="main">

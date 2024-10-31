@@ -20,12 +20,9 @@
         <div class="transactiontypes form content">
             <?= $this->Form->create($transactiontype) ?>
             <fieldset>
-                <legend><?= __('Edit Transactiontype') ?></legend>
+                <legend><?= __('Edit Transaction type') ?></legend>
                 <?php
                     echo $this->Form->control('name');
-                    echo $this->Form->control('createdby');
-                    echo $this->Form->control('modifiedby');
-                    echo $this->Form->control('deleted');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

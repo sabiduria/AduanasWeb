@@ -12,16 +12,13 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('sender_id') ?></th>
-                    <th><?= $this->Paginator->sort('receiver_id') ?></th>
-                    <th><?= $this->Paginator->sort('status_id') ?></th>
-                    <th><?= $this->Paginator->sort('user_id') ?></th>
-                    <th><?= $this->Paginator->sort('transactiontype_id') ?></th>
+                    <th><?= $this->Paginator->sort('sender') ?></th>
+                    <th><?= $this->Paginator->sort('receiver') ?></th>
+                    <th><?= $this->Paginator->sort('status') ?></th>
+                    <th><?= $this->Paginator->sort('user') ?></th>
+                    <th><?= $this->Paginator->sort('transaction type') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th><?= $this->Paginator->sort('createdby') ?></th>
-                    <th><?= $this->Paginator->sort('modifiedby') ?></th>
-                    <th><?= $this->Paginator->sort('deleted') ?></th>
+                    <th><?= $this->Paginator->sort('created by') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -35,10 +32,7 @@
                     <td><?= $transaction->hasValue('user') ? $this->Html->link($transaction->user->name, ['controller' => 'Users', 'action' => 'view', $transaction->user->id]) : '' ?></td>
                     <td><?= $transaction->hasValue('transactiontype') ? $this->Html->link($transaction->transactiontype->name, ['controller' => 'Transactiontypes', 'action' => 'view', $transaction->transactiontype->id]) : '' ?></td>
                     <td><?= h($transaction->created) ?></td>
-                    <td><?= h($transaction->modified) ?></td>
                     <td><?= h($transaction->createdby) ?></td>
-                    <td><?= h($transaction->modifiedby) ?></td>
-                    <td><?= $transaction->deleted === null ? '' : $this->Number->format($transaction->deleted) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $transaction->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $transaction->id]) ?>

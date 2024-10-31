@@ -19,13 +19,10 @@
                 <?php
                     echo $this->Form->control('name');
                     echo $this->Form->control('code');
-                    echo $this->Form->control('agencytype');
+                    echo $this->Form->control('agencytype', ['label'=>'Agency Type', 'options'=>['Warehouse'=>'Warehouse', 'Agency'=>'Agency']]);
                     echo $this->Form->control('address');
                     echo $this->Form->control('country');
                     echo $this->Form->control('reference');
-                    echo $this->Form->control('createdby');
-                    echo $this->Form->control('modifiedby');
-                    echo $this->Form->control('deleted');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

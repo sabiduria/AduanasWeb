@@ -47,6 +47,11 @@ class TransactionsController extends AppController
         $transaction = $this->Transactions->newEmptyEntity();
         if ($this->request->is('post')) {
             $transaction = $this->Transactions->patchEntity($transaction, $this->request->getData());
+
+            $transaction->createdby = "System";
+            $transaction->modifiedby = "System";
+            $transaction->deleted = 0;
+
             if ($this->Transactions->save($transaction)) {
                 $this->Flash->success(__('The transaction has been saved.'));
 
@@ -73,6 +78,9 @@ class TransactionsController extends AppController
         $transaction = $this->Transactions->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $transaction = $this->Transactions->patchEntity($transaction, $this->request->getData());
+
+            $transaction->modifiedby = "System";
+
             if ($this->Transactions->save($transaction)) {
                 $this->Flash->success(__('The transaction has been saved.'));
 

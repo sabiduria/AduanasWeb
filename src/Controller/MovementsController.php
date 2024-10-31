@@ -47,6 +47,11 @@ class MovementsController extends AppController
         $movement = $this->Movements->newEmptyEntity();
         if ($this->request->is('post')) {
             $movement = $this->Movements->patchEntity($movement, $this->request->getData());
+
+            $movement->createdby = "System";
+            $movement->modifiedby = "System";
+            $movement->deleted = 0;
+
             if ($this->Movements->save($movement)) {
                 $this->Flash->success(__('The movement has been saved.'));
 
@@ -71,6 +76,9 @@ class MovementsController extends AppController
         $movement = $this->Movements->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $movement = $this->Movements->patchEntity($movement, $this->request->getData());
+
+            $movement->modifiedby = "System";
+
             if ($this->Movements->save($movement)) {
                 $this->Flash->success(__('The movement has been saved.'));
 

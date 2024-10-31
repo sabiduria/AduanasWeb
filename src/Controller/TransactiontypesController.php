@@ -46,6 +46,11 @@ class TransactiontypesController extends AppController
         $transactiontype = $this->Transactiontypes->newEmptyEntity();
         if ($this->request->is('post')) {
             $transactiontype = $this->Transactiontypes->patchEntity($transactiontype, $this->request->getData());
+
+            $transactiontype->createdby = "System";
+            $transactiontype->modifiedby = "System";
+            $transactiontype->deleted = 0;
+
             if ($this->Transactiontypes->save($transactiontype)) {
                 $this->Flash->success(__('The transactiontype has been saved.'));
 
@@ -68,6 +73,9 @@ class TransactiontypesController extends AppController
         $transactiontype = $this->Transactiontypes->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $transactiontype = $this->Transactiontypes->patchEntity($transactiontype, $this->request->getData());
+
+            $transactiontype->modifiedby = "System";
+
             if ($this->Transactiontypes->save($transactiontype)) {
                 $this->Flash->success(__('The transactiontype has been saved.'));
 

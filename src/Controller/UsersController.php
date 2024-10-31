@@ -46,6 +46,11 @@ class UsersController extends AppController
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+
+            $user->createdby = "System";
+            $user->modifiedby = "System";
+            $user->deleted = 0;
+
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
@@ -68,6 +73,9 @@ class UsersController extends AppController
         $user = $this->Users->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+
+            $user->modifiedby = "System";
+
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 

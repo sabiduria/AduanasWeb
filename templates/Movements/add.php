@@ -19,11 +19,8 @@
             <fieldset>
                 <legend><?= __('Add Movement') ?></legend>
                 <?php
-                    echo $this->Form->control('transaction_id', ['options' => $transactions]);
-                    echo $this->Form->control('seal_id', ['options' => $seals]);
-                    echo $this->Form->control('createdby');
-                    echo $this->Form->control('modifiedby');
-                    echo $this->Form->control('deleted');
+                    echo $this->Form->control('transaction_id', ['options' => $transactions, 'label'=>'Transaction']);
+                    echo $this->Form->control('seal_id', ['options' => $seals, 'label'=>'Seal']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

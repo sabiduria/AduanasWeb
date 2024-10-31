@@ -14,15 +14,12 @@
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('name') ?></th>
                     <th><?= $this->Paginator->sort('code') ?></th>
-                    <th><?= $this->Paginator->sort('agencytype') ?></th>
+                    <th><?= $this->Paginator->sort('agency type') ?></th>
                     <th><?= $this->Paginator->sort('address') ?></th>
                     <th><?= $this->Paginator->sort('country') ?></th>
                     <th><?= $this->Paginator->sort('reference') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th><?= $this->Paginator->sort('createdby') ?></th>
-                    <th><?= $this->Paginator->sort('modifiedby') ?></th>
-                    <th><?= $this->Paginator->sort('deleted') ?></th>
+                    <th><?= $this->Paginator->sort('created by') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -37,10 +34,7 @@
                     <td><?= h($agency->country) ?></td>
                     <td><?= h($agency->reference) ?></td>
                     <td><?= h($agency->created) ?></td>
-                    <td><?= h($agency->modified) ?></td>
                     <td><?= h($agency->createdby) ?></td>
-                    <td><?= h($agency->modifiedby) ?></td>
-                    <td><?= $agency->deleted === null ? '' : $this->Number->format($agency->deleted) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $agency->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $agency->id]) ?>

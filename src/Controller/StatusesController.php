@@ -46,6 +46,11 @@ class StatusesController extends AppController
         $status = $this->Statuses->newEmptyEntity();
         if ($this->request->is('post')) {
             $status = $this->Statuses->patchEntity($status, $this->request->getData());
+
+            $status->createdby = "System";
+            $status->modifiedby = "System";
+            $status->deleted = 0;
+
             if ($this->Statuses->save($status)) {
                 $this->Flash->success(__('The status has been saved.'));
 
@@ -68,6 +73,9 @@ class StatusesController extends AppController
         $status = $this->Statuses->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $status = $this->Statuses->patchEntity($status, $this->request->getData());
+
+            $status->modifiedby = "System";
+
             if ($this->Statuses->save($status)) {
                 $this->Flash->success(__('The status has been saved.'));
 

@@ -19,10 +19,7 @@
                 <?php
                     echo $this->Form->control('reference');
                     echo $this->Form->control('barcode');
-                    echo $this->Form->control('sealstatus');
-                    echo $this->Form->control('createdby');
-                    echo $this->Form->control('modifiedby');
-                    echo $this->Form->control('deleted');
+                    echo $this->Form->control('sealstatus', ['label'=>'Seal Status', 'options'=>['In good condition'=>'In good condition', 'Broken'=>'Broken']]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

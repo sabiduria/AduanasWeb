@@ -21,8 +21,8 @@ class StatusesFixture extends TestFixture
             [
                 'id' => 1,
                 'name' => 'Lorem ipsum dolor sit amet',
-                'created' => '2024-10-31 16:16:52',
-                'modified' => '2024-10-31 16:16:52',
+                'created' => '2024-10-31 17:11:06',
+                'modified' => '2024-10-31 17:11:06',
                 'createdby' => 'Lorem ipsum dolor sit amet',
                 'modifiedby' => 'Lorem ipsum dolor sit amet',
                 'deleted' => 1,

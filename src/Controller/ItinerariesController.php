@@ -46,6 +46,11 @@ class ItinerariesController extends AppController
         $itinerary = $this->Itineraries->newEmptyEntity();
         if ($this->request->is('post')) {
             $itinerary = $this->Itineraries->patchEntity($itinerary, $this->request->getData());
+
+            $itinerary->createdby = "System";
+            $itinerary->modifiedby = "System";
+            $itinerary->deleted = 0;
+
             if ($this->Itineraries->save($itinerary)) {
                 $this->Flash->success(__('The itinerary has been saved.'));
 
@@ -68,6 +73,9 @@ class ItinerariesController extends AppController
         $itinerary = $this->Itineraries->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $itinerary = $this->Itineraries->patchEntity($itinerary, $this->request->getData());
+
+            $itinerary->modifiedby = "System";
+
             if ($this->Itineraries->save($itinerary)) {
                 $this->Flash->success(__('The itinerary has been saved.'));
 
